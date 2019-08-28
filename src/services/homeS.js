@@ -6,7 +6,7 @@ import xhr from './index.js'
 //文章列表
 function articleManageList(param) {
   return xhr({
-    url: 'admin/v1/articles',
+    url: '/v4_0/article/list',
     body:param
   })
 }

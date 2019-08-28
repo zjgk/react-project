@@ -23,7 +23,7 @@ import React from 'react';
     render() {
         return ( 
             <div>
-              我是登录的
+              登录的
             </div> )
     }
 }

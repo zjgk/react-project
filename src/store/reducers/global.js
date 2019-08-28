@@ -16,9 +16,9 @@ export default Model.getInstance(
             number:data
           }
         });
-        const expand = "type_name,source_name,update_time_str,online_time_str,status_name,push_site_name";
         let result = await homeS.articleManageList({
-          expand
+          page:1,
+          pages:5
         });
         if (result) {
           this.dispatch({

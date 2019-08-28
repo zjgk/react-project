@@ -22,7 +22,6 @@ export default class Home extends React.PureComponent {
     const { list = [] } = dataList;
     return (
       <div>
-        首页
         <div>
           <input
             onChange={e => {
@@ -40,6 +39,8 @@ export default class Home extends React.PureComponent {
           {list.map(item => {
             return <div key={item.id}>{item.source_name}</div>;
           })}
+          <div>
+          </div>
         </div>
       </div>
     );

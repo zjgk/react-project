@@ -9,7 +9,7 @@ const requireModels = require.context("./store/reducers", false, /\.js$/);
 requireModels.keys().forEach(filename => {
   configureStore.pushModel(requireModels(filename).default);
 });
-console.log(window,'window.__PRELOADED_STATE__',configureStore)
+console.log(window, "window.__PRELOADED_STATE__", configureStore);
 const store = configureStore.createStore(window.__PRELOADED_STATE__);
 
 ReactDOM.render(

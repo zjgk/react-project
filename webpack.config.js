@@ -28,9 +28,9 @@ module.exports = {
     hot: true, //开启热更新
     // hotOnly: true //尽管html功能没有实现，也不让浏览器刷新
       proxy: {
-        "/admin/*": {
-          target: "http://new.geetemp.cn",
-          changeOrigin: true
+        "/v4_0/*": {
+          "target": "https://www.geetemp.com",
+          "changeOrigin": true
         }
       }
   },
