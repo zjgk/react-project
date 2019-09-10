@@ -27,12 +27,12 @@ module.exports = {
     // open: true, //自动打开浏览器,
     hot: true, //开启热更新
     // hotOnly: true //尽管html功能没有实现，也不让浏览器刷新
-      proxy: {
-        "/v4_0/*": {
-          "target": "https://www.geetemp.com",
-          "changeOrigin": true
-        }
+    proxy: {
+      "/v4_0/*": {
+        "target": "https://www.geetemp.com",
+        "changeOrigin": true
       }
+    }
   },
   resolve: {
     alias: {
@@ -44,7 +44,7 @@ module.exports = {
   // 装载虚拟目录插件
   plugins: [
     htmlWebpackPlugin,
-    new webpack.HotModuleReplacementPlugin() //使用模块热更新插件
+    new webpack.HotModuleReplacementPlugin(),//使用模块热更新插件
   ],
   module: {
     // 根据文件后缀匹配规则
@@ -59,7 +59,14 @@ module.exports = {
           "postcss-loader",
           "sass-loader" // compiles Sass to CSS
         ]
-      }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader", // creates style nodes from JS strings
+          "css-loader", // translates CSS into CommonJS
+        ]
+      },
     ]
   }
 };

@@ -1,0 +1,39 @@
+// mixins
+
+// 最小宽度，居中布局
+@mixin layout-center($width) {
+  margin: 0 auto;
+  width: $width;
+  min-width: $width;
+}
+
+// 两列,
+@mixin two-column-flex($x: center, $y: center) {
+  display: flex;
+  justify-content: $x;
+  align-items: $y;
+}
+// 两列,传统inline-block，左图像, 右多div
+@mixin two-column-center($height: 100%, $y: top) {
+  height: $height;
+  & > div {
+    display: inline-block;
+    vertical-align: $y;
+    
+    &:first-child {
+      line-height: $height;
+    }
+    &:last-child {
+      position: relative;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+}
+// 两列,传统inline-block, 左右单div
+@mixin two-column-single($y: top) {
+  & > div {
+    display: inline-block;
+    vertical-align: $y;
+  }
+}

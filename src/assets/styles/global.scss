@@ -1,0 +1,113 @@
+/* @styled-jsx=global */
+@import "normalize.scss";
+@import "variable.scss";
+body {
+  font-family: "Microsoft Yahei", "微软雅黑", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.1;
+  color: #333;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+#newBridge {
+  display: none !important;
+}
+
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clear {
+  zoom: 1;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  min-width: 1180px;
+  width: 1180px;
+  margin: 0 auto;
+}
+
+//cover
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.ant-confirm-body .ant-confirm-content {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+}
+//关于即派dropdown start
+.ant-dropdown-menu-item-active {
+  background: transparent !important;
+  a {
+    color: #38a3e8;
+  }
+}
+.ant-dropdown-menu {
+  margin-top: 20px;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+.ant-dropdown-menu-item {
+  width: 120px;
+  padding-left: 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.ant-dropdown-menu-item,
+.ant-dropdown-menu-submenu-title {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+//关于即派dropdown end
+
+
+.ant-form-explain{
+  line-height: 1.524;
+  // font-size: 12px;
+}
