@@ -26,6 +26,7 @@ export default class Head extends React.PureComponent {
       <div>
         <Link to="/home">home</Link>&nbsp;
         <Link to="/login">login</Link>
+        我是导航的
       </div>
     );
   }

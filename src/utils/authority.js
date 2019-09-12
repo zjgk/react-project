@@ -1,26 +1,26 @@
-// use localStorage to store the authority info, which might be sent from server in actual project.
+// use localStorage to store the authorityRoles info, which might be sent from server in actual project.
 export function getAuthority(str) {
-  // return localStorage.getItem('antd-pro-authority') || ['admin', 'user'];
+  // return localStorage.getItem('antd-pro-authorityRoles') || ['admin', 'user'];
   const authorityString =
-    typeof str === "undefined" ? localStorage.getItem("authority") : str;
+    typeof str === "undefined" ? localStorage.getItem("authorityRoles") : str;
   // authorityString could be admin, "admin", ["admin"]
-  let authority;
+  let authorityRoles;
   try {
-    authority = JSON.parse(authorityString);
+    authorityRoles = JSON.parse(authorityString);
   } catch (e) {
-    authority = authorityString;
+    authorityRoles = authorityString;
   }
-  if (typeof authority === "string") {
-    return [authority];
+  if (typeof authorityRoles === "string") {
+    return [authorityRoles];
   }
-  return authority || ["admin"];
+  return authorityRoles || ["admin"];
 }
 
-export function setAuthority(authority) {
-  const proAuthority = typeof authority === "string" ? [authority] : authority;
-  return localStorage.setItem("authority", JSON.stringify(proAuthority));
+export function setAuthority(authorityRoles) {
+  const proAuthority = typeof authorityRoles === "string" ? [authorityRoles] : authorityRoles;
+  return localStorage.setItem("authorityRoles", JSON.stringify(proAuthority));
 }
 
 export function clearAuthority() {
-  localStorage.removeItem("authority");
+  localStorage.removeItem("authorityRoles");
 }

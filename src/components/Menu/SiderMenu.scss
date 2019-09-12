@@ -1,0 +1,43 @@
+.base-menu {
+    background: transparent;
+    .ant-menu-inline.ant-menu-sub {
+      box-shadow: none;
+      background: transparent;
+    }
+    .ant-menu-inline.ant-menu-sub {
+      &:before,&:after {
+        display: none;
+      }
+    }
+    &.ant-menu-inline-collapsed {
+      width: 60px;
+    }
+    &.ant-menu-inline-collapsed > .ant-menu-item {
+      padding: 0 21px !important;
+    }
+    &.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+      padding: 0 21px !important;
+    }
+    .ant-menu-item-selected {
+      background-color: rgba(0,0,0,.2) !important;
+      border-left: 2px solid #00dc94;
+    }
+  }
+  .menu-sider {
+    position: relative;
+    background-image: linear-gradient(0deg, #0e1a4a 0%, #2a4280 100%), linear-gradient(	#2a4280, 	#2a4280);
+      background-blend-mode: normal, normal;
+    .menu-bg-img {
+      position: absolute;
+      right: 0;
+      bottom: 19px;
+    }
+    .menu-bg-img-sm {
+      position: absolute;
+      left: 9px;
+      bottom: 210px;
+    }
+    .ant-layout-sider-children {
+      background: url('${menuBg}') 9px 605px no-repeat;
+    }
+  }

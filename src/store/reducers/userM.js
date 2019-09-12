@@ -2,8 +2,8 @@ import Model from "../Model";
 import { createBrowserHistory } from 'history';
 import { clearAuthority, setAuthority } from "utils/authority";
 import { loginReq, isLoginReq, logoutReq, restPwd } from "services/userS";
-// import { reloadAuthorized } from "utils/Authorized";
-import {history} from "../../routes" 
+import { reloadAuthorized } from "utils/Authorized";
+import { history } from "../../index.js"
 
 export default Model.getInstance(
   class extends Model {
@@ -20,7 +20,7 @@ export default Model.getInstance(
 
     actions = {
       async login(param) {
-        console.log('dd',history)
+        console.log('dd', history)
         // debugger
         // const loginReqRes = await loginReq(param);
         // if (loginReqRes && loginReqRes.code === 0) {
@@ -32,34 +32,38 @@ export default Model.getInstance(
         //   // reloadAuthorized();
         //   // history.push("/workBench");
         // }
+        reloadAuthorized();
+        setAuthority("admin");
+        history.push("/");
 
-          history.push("/home");
-        
       },
 
       async isLogin() {
-        const isLoginReqRes = await isLoginReq();
-        if (isLoginReqRes && isLoginReqRes.code === 0) {
-          this.dispatch({
-            type: "user/setUser",
-            payload: isLoginReqRes.data
-          });
-        } else {
-          clearAuthority();
-          // history.replace("/user/login");
-        }
+        // const isLoginReqRes = await isLoginReq();
+        // if (isLoginReqRes && isLoginReqRes.code === 0) {
+        //   this.dispatch({
+        //     type: "user/setUser",
+        //     payload: isLoginReqRes.data
+        //   });
+        // } else {
+        //   clearAuthority();
+        //   // history.replace("/user/login");
+        // }
+        console.log("初始的")
       },
 
       async logout() {
-        const logoutReqRes = await logoutReq();
-        if (logoutReqRes.code === 0) {
-          this.dispatch({
-            type: "user/setUser",
-            payload: {}
-          });
-          clearAuthority();
-          // history.replace("/user/login");
-        }
+        // const logoutReqRes = await logoutReq();
+        // if (logoutReqRes.code === 0) {
+        //   this.dispatch({
+        //     type: "user/setUser",
+        //     payload: {}
+        //   });
+        //   clearAuthority();
+        //   history.replace("/user/login");
+        // }
+        clearAuthority();
+        history.replace("/login");
       },
       async restPwd(param) {
         const result = await restPwd({ ...param });
@@ -74,8 +78,8 @@ export default Model.getInstance(
       setUnread(state, { payload: data }) {
         if (data) {
           state.unread_message = state.unread_message ? state.unread_message - 1 : 0;
-        } 
-        return { ...state,  };
+        }
+        return { ...state, };
       }
     };
   }

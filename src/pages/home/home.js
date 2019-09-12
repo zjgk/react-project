@@ -23,6 +23,7 @@ export default class Home extends React.PureComponent {
     return (
       <div>
         <div>
+          首页
           <input
             onChange={e => {
               this.setState({ val: e.target.value });

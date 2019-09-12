@@ -5,6 +5,8 @@ export default Model.getInstance(
     namespace = "global";
     state = {
       name: "",
+      collapsed: false,
+      pathname: "",
       dataList: {}
     };
 
@@ -51,7 +53,19 @@ export default Model.getInstance(
         const { filed, value } = payload;
         state[filed] = value;
         return { ...state };
-      }
+      },
+      setPathname(state, { payload: pathname }) {
+        return {
+          ...state,
+          pathname
+        };
+      },
+      changeLayoutCollapsed(state, { payload: collapsed }) {
+        return {
+          ...state,
+          collapsed
+        };
+      },
     };
   }
 );
