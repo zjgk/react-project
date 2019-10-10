@@ -34,7 +34,7 @@ export default Model.getInstance(
         // }
         reloadAuthorized();
         setAuthority("admin");
-        history.push("/");
+        history.push("/home");
 
       },
 
