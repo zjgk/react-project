@@ -7,6 +7,8 @@ import { createBrowserHistory } from 'history';
 import Login from "pages/login/login.js";
 import Home from "pages/home/home.js";
 import Head from "pages/head/head.js";
+import Performance from "pages/performance/performance.js";
+import CanvasDemo from "pages/canvas-demo/canvas-demo.js";
 import GeeLayout from "./layout/GeeLayout";
 import CustomIcon from "components/CustomIcon";
 
@@ -44,6 +46,14 @@ const Routes = () => (
       />
       <Route path="/head" name="head行"
         authority={indexAuth} component={Head}
+        icon={<CustomIcon type="icon-tasklist" style={{ fontSize: 15 }} />}
+        />
+      <Route path="/canvas" name="canvas"
+        authority={indexAuth} component={CanvasDemo}
+        icon={<CustomIcon type="icon-tasklist" style={{ fontSize: 15 }} />}
+        />
+      <Route path="/performance" name="performance"
+        authority={indexAuth} component={Performance }
         icon={<CustomIcon type="icon-tasklist" style={{ fontSize: 15 }} />}
         />
     </Route>
