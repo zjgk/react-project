@@ -206,7 +206,7 @@ export default class Performance extends React.PureComponent {
               }])
             }
           },
-          data: [["2019-10", "451"], ["2019-11", "155"]]
+          data: [["2019-10", "451"], ["2019-11", "442"]]
         },
         {
           name: '班次',
@@ -232,7 +232,7 @@ export default class Performance extends React.PureComponent {
               }])
             }
           },
-          data: [["2019-10", "29"], ["2019-11", "20"]]
+          data: [["2019-10", "29"], ["2019-11", "30"]]
         }
 
       ]
@@ -287,12 +287,12 @@ export default class Performance extends React.PureComponent {
       dataset: {
         source: [
           ['语文', '2019-10', '2019-11'],
-          ['语文', 49],
-          ['数学', 474],
-          ['外语', 536],
-          ['物理', 473],
-          ['化学', 531],
-          ['生物', 307],
+          ['语文', 49,303],
+          ['数学', 474,292],
+          ['外语', 536,456],
+          ['物理', 473,544],
+          ['化学', 531],545,
+          ['生物', 307,388],
         ]
       },
       xAxis: { type: 'category' },
@@ -327,12 +327,12 @@ export default class Performance extends React.PureComponent {
       dataset: {
         source: [
           ['语文', '2019-10', '2019-11'],
-          ['语文', 5],
-          ['数学', 30],
-          ['外语', 38],
-          ['物理', 31],
-          ['化学', 36],
-          ['生物', 19],
+          ['语文', 5,21],
+          ['数学', 30,19],
+          ['外语', 38,29],
+          ['物理', 31,35],
+          ['化学', 36,40],
+          ['生物', 19,30],
         ]
       },
       xAxis: { type: 'category' },
